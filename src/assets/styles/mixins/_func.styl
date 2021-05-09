@@ -1,0 +1,403 @@
+/**
+ * Utilities
+ */
+// Default
+mgPd(mg = 0, pd = 0)
+  margin mg
+  padding pd
+/**
+ * Text
+ */
+// Default
+text(fsz = 16px, fw = 500, fst = normal, lh = 1.4, ta = left, tt = none, td = none)
+  font-size fsz
+  font-weight fw
+  font-style fst
+  line-height lh
+  text-align ta
+  text-transform tt
+  text-decoration td
+// Base title
+base_sub_title()
+  text(28px, 700, normal, 1.4, left, none, none)
+  color $color_dark
+// Base sub title
+base_sub_title()
+  text(22px, 600, normal, 1.4, left, none, none)
+  color $color_dark
+// Base text
+base_text()
+  text(16px, 500, normal, 1.4, left, none, none)
+  color $color_dark
+// Base small text
+base_text_small()
+  text(14px, 400, italic, 1.4, left, none, none)
+  color $color_dark
+/**
+ * Display
+ * Type: Flex
+ */
+// Default
+dFlex(d = row, jc = flex-start, ai = flex-start, wr = nowrap)
+  display flex
+  flex-direction d
+  justify-content jc
+  align-items ai
+  flex-wrap wr
+// row-center-center
+df_rcc()
+  dFlex(row, center, center)
+// row-start-center
+df_rsc()
+  dFlex(row, flex-start, center)
+// row-start-center
+df_rec()
+  dFlex(row, flex-end, center)
+// row-center-start
+df_rcs()
+  dFlex(row, center, flex-start)
+// row-center-start
+df_rce()
+  dFlex(row, center, flex-end)
+// row-start-end
+df_rse()
+  dFlex(row, flex-start, flex-end)
+// row-end-start
+df_rec()
+  dFlex(row, flex-end, flex-start)
+// row-start-start
+df_rss()
+  dFlex(row, flex-start, flex-start)
+// row-end-end
+df_ree()
+  dFlex(row, flex-end, flex-end)
+// row-center-center
+df_ccc()
+  dFlex(column, center, center)
+// row-start-center
+df_csc()
+  dFlex(column, flex-start, center)
+// row-start-center
+df_cec()
+  dFlex(column, flex-end, center)
+// row-center-start
+df_ccs()
+  dFlex(column, center, flex-start)
+// row-center-start
+df_cce()
+  dFlex(column, center, flex-end)
+// row-start-end
+df_cse()
+  dFlex(column, flex-start, flex-end)
+// row-end-start
+df_ces()
+  dFlex(column, flex-end, flex-start)
+// row-start-start
+df_css()
+  dFlex(column, flex-start, flex-start)
+// row-end-end
+df_cee()
+  dFlex(column, flex-end, flex-end)
+/**
+ * Header navigation
+ */
+header_nav_control_btn()
+  min-width $size_header_elements
+  max-width $size_header_elements
+  width 100%
+  min-height $size_header_elements
+  max-height $size_header_elements
+  height 100%
+  padding 0
+  background none
+  border-radius $size_radius
+  df_rcc()
+  cursor pointer
+  transition $transition
+  // # Icon
+  .icon
+    max-width $size_header_elements
+    width 100%
+    max-height $size_header_elements
+    height 100%
+    fill $color_app_white
+  // Active
+  &.active
+    padding 6px
+    background-color $color_app_dark
+  // Small
+  &.small .icon
+    min-width $size_header_elements_small
+    max-width $size_header_elements_small
+    min-height $size_header_elements_small
+    max-height $size_header_elements_small
+/**
+ * Fields
+ */
+base_checkbox()
+  // ## Custom checkbox
+  & ~ .preview_checkbox
+    max-width 26px
+    min-width 26px
+    width 100%
+    max-height 26px
+    min-height 26px
+    height 100%
+    background-color transparent
+    border 2px solid $color_app_pink
+    border-radius 10px
+    df_ccc()
+    cursor pointer
+    position relative
+    .check
+      max-width 16px
+      width 100%
+      max-height 16px
+      height 100%
+      fill $color_app_dark
+  // ## Active
+  &:checked ~ .preview_checkbox
+    background-color $color_app_pink
+/**
+ * Preview icon
+ */
+preview_icon()
+  min-width 36px
+  max-width 36px
+  width 100%
+  min-height 36px
+  max-height 36px
+  height 100%
+  padding 8px
+  background-color $color_app_green
+  border-radius 10px
+  df_rcc()
+  .icon
+    width 100%
+    height 100%
+    fill $color_app_white
+  // # Small
+  &.small
+    min-width 30px
+    max-width 30px
+    min-height 30px
+    max-height 30px
+    padding 6px
+    border-radius 8px
+/**
+ * Toggle icon
+ */
+toggle_icon()
+  min-width 24px
+  max-width 24px
+  width 100%
+  min-height 24px
+  max-height 24px
+  height 100%
+  background none
+  df_rcc()
+  .icon
+    max-width 14px
+    width 100%
+    max-height 14px
+    height 100%
+    fill $color_app_grey
+    transition $transition
+  // Active
+  &.active .icon
+    transform rotate(90deg)
+/**
+ * Color base
+ */
+// Base color schema
+color_schema()
+  // ## mint
+  &.mint
+    .border_color
+      border-color $color_app_mint !important
+    .bg_color
+      background-color $color_app_mint !important
+    .main_color
+      color $color_app_white !important
+  // ## yellow
+  &.yellow
+    .border_color
+      border-color $color_app_yellow !important
+    .bg_color
+      background-color $color_app_yellow !important
+    .main_color
+      color $color_app_white !important
+  // ## green
+  &.green
+    .border_color
+      border-color $color_app_green !important
+    .bg_color
+      background-color $color_app_green !important
+    .main_color
+      color $color_app_white !important
+  // ## pink
+  &.pink
+    .border_color
+      border-color $color_app_pink !important
+    .bg_color
+      background-color $color_app_pink !important
+    .main_color
+      color $color_app_white !important
+  // ## brown
+  &.brown
+    .border_color
+      border-color $color_app_brown !important
+    .bg_color
+      background-color $color_app_brown !important
+    .main_color
+      color $color_app_white !important
+  // ## red
+  &.red
+    .border_color
+      border-color $color_app_red !important
+    .bg_color
+      background-color $color_app_red !important
+    .main_color
+      color $color_app_white !important
+  // ## purple
+  &.purple
+    .border_color
+      border-color $color_app_purple !important
+    .bg_color
+      background-color $color_app_purple !important
+    .main_color
+      color $color_app_white !important
+  // ## black
+  &.black
+    .border_color
+      border-color $color_app_black !important
+    .bg_color
+      background-color $color_app_black !important
+    .main_color
+      color $color_app_white !important
+  // ## grey
+  &.grey
+    .border_color
+      border-color $color_app_grey !important
+    .bg_color
+      background-color $color_app_grey !important
+    .fill_color svg
+      fill $color_app_black !important
+    .main_color
+      color $color_app_black !important
+  // ## blue
+  &.blue
+    .border_color
+      border-color $color_app_blue !important
+    .bg_color
+      background-color $color_app_blue !important
+    .fill_color svg
+      fill $color_app_white !important
+    .main_color
+      color $color_app_white !important
+// SVG Color schema
+svg_color_schema()
+  // ## mint
+  &.mint
+    .fill_color
+      fill $color_app_mint !important
+  // ## yellow
+  &.yellow
+    .fill_color
+      fill $color_app_yellow !important
+  // ## green
+  &.green
+    .fill_color
+      fill $color_app_green !important
+  // ## pink
+  &.pink
+    .fill_color
+      fill $color_app_pink !important
+  // ## brown
+  &.brown
+    .fill_color
+      fill $color_app_brown !important
+  // ## red
+  &.red
+    .fill_color
+      fill $color_app_red !important
+  // ## purple
+  &.purple
+    .fill_color
+      fill $color_app_purple !important
+  // ## black
+  &.black
+    .fill_color
+      fill $color_app_black !important
+  // ## grey
+  &.grey
+    .fill_color
+      fill $color_app_grey !important
+  // ## blue
+  &.blue
+    .fill_color
+      fill $color_app_blue !important
+// BG Color schema
+bg_color_schema()
+  // ## mint
+  &.mint
+    background-color $color_app_mint !important
+  // ## yellow
+  &.yellow
+    background-color $color_app_yellow !important
+  // ## green
+  &.green
+    background-color $color_app_green !important
+  // ## pink
+  &.pink
+    background-color $color_app_pink !important
+  // ## brown
+  &.brown
+    background-color $color_app_brown !important
+  // ## red
+  &.red
+    background-color $color_app_red !important
+  // ## purple
+  &.purple
+    background-color $color_app_purple !important
+  // ## black
+  &.black
+    background-color $color_app_black !important
+  // ## grey
+  &.grey
+    background-color $color_app_grey !important
+  // ## blue
+  &.blue
+    background-color $color_app_blue !important
+// Fill Color schema
+fill_color_schema()
+  // ## mint
+  &.mint
+    fill $color_app_mint !important
+  // ## yellow
+  &.yellow
+    fill $color_app_yellow !important
+  // ## green
+  &.green
+    fill $color_app_green !important
+  // ## pink
+  &.pink
+    fill $color_app_pink !important
+  // ## brown
+  &.brown
+    fill $color_app_brown !important
+  // ## red
+  &.red
+    fill $color_app_red !important
+  // ## purple
+  &.purple
+    fill $color_app_purple !important
+  // ## black
+  &.black
+    fill $color_app_black !important
+  // ## grey
+  &.grey
+    fill $color_app_grey !important
+  // ## blue
+  &.blue
+    fill $color_app_blue !important
